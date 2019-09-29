@@ -23,10 +23,21 @@ class ShoppingListApplication {
                         String name = scanner.nextLine();
                         System.out.println("Enter product price: ");
                         BigDecimal price = new BigDecimal(scanner.nextLine());
+                        System.out.println("Enter product category");
+                        String category = scanner.nextLine();
+                        System.out.println("Enter product description");
+                        String description = scanner.nextLine();
+                        System.out.println("Enter product discount");
+                        Integer discount = scanner.nextInt();
                         Product product = new Product();
+                        //product.nameRules();
                         product.setName(name);
                         product.setPrice(price);
+                        // product.priceRules(price);
                         product.setId(productIdSequence);
+                        product.setCategory(category);
+                        product.setDescription(description);
+                        product.discount();
                         productRepository.put(productIdSequence, product);
                         productIdSequence++;
                         System.out.println("Result: " + product.getId());
@@ -40,6 +51,7 @@ class ShoppingListApplication {
                 }
             } catch (Exception e) {
                 System.out.println("Error! Please try again.");
+
             }
         }
     }
