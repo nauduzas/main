@@ -9,7 +9,7 @@ public class Product {
 
     void nameRules() {
         if (name.length() < 3 && name.length() > 32) {
-            System.out.println("Name must be not shorter then 3 and not longer then 32 characters ");
+            System.out.println(" Name must be not shorter then 3 and not longer then 32 characters ");
         }
     }
 
