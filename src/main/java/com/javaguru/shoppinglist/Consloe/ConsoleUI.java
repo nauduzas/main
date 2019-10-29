@@ -3,13 +3,20 @@ package com.javaguru.shoppinglist.Consloe;
 import com.javaguru.shoppinglist.Service.ProductService;
 import com.javaguru.shoppinglist.Service.Validation.ProductValidationException;
 import com.javaguru.shoppinglist.Domain.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 import java.util.Scanner;
-
+@Component
 public class ConsoleUI {
-    private ProductService productService = new ProductService();
+   private ProductService productService;
 
+   public ConsoleUI(ProductService productService){
+       this.productService = productService;
+   }
+    @Autowired
     public void execute() {
         while (true) {
             Scanner scanner = new Scanner(System.in);
@@ -40,7 +47,6 @@ public class ConsoleUI {
 
 
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Enter product name: ");
         String name = scanner.nextLine();
         System.out.println("Enter product price: ");
@@ -51,16 +57,16 @@ public class ConsoleUI {
         String description = scanner.nextLine();
         System.out.println("Enter product discount");
         Double discount = scanner.nextDouble();
+
         Product product = new Product();
-        Long id = productService.createProduct(product);
 
-
+        
         product.setName(name);
         product.setPrice(price);
-
         product.setCategory(category);
         product.setDescription(description);
         product.setDiscount(discount);
+        Long id = productService.createProduct(product);
         product.setId(id);
 
         System.out.println("Result: " + product.getId());

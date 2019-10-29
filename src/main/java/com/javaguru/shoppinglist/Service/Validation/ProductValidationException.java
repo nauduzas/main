@@ -3,7 +3,8 @@ package com.javaguru.shoppinglist.Service.Validation;
 public class ProductValidationException extends RuntimeException {
 
 
-    private ProductValidationException(String message) {
+    public ProductValidationException(String message) {
+
         super(message);
     }
 }

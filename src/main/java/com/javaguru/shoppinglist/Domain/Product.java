@@ -15,12 +15,6 @@ public class Product {
 
     private double discount;
 
-//    void discount() {
-//        if (discount == 100) {
-//            System.out.println("Error");
-//        }
-//
-//    }
 
 
     public double getDiscount() {
@@ -59,12 +53,7 @@ public class Product {
         return name;
     }
 
-    public void setName(String name) throws ProductValidationException {
-
-//        if (name.length() < 3|| name.length()>32) {
-//        throw new ProductValidationException(" Name must be not shorter then 3 and not longer then 32 characters ");
-//        }
-
+    public void setName(String name)  {
 
         this.name = name;
     }
@@ -73,11 +62,8 @@ public class Product {
         return price;
     }
 
-    public void setPrice(BigDecimal price) throws ProductValidationException {
-//        if (price.equals(0)){
-////            throw  new ProductValidationException("wrong");
-////
-////        }
+    public void setPrice(BigDecimal price)  {
+
         this.price = price;
     }
 

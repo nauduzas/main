@@ -8,7 +8,8 @@ public interface ProductValidationRule {
 
     default void checkNotNull(Product product) {
         if (product == null)
-            throw new ProductValidationException("Product most be not null 2");
+            throw new ProductValidationException("Product must be not null 2");
+
     }
 
 }
