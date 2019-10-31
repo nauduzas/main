@@ -20,15 +20,15 @@ public class Application {
     public static void main(String[] args) {
         ProductInMemoryRepository repository = new ProductInMemoryRepository();
 
-        ProductValidationRule productNameValidationRule= new ProductNameValidationRule();
-        ProductValidationRule productUniqueNameValidationRule= new ProductUniqueNameValidationRule(repository);
+        ProductValidationRule productNameValidationRule = new ProductNameValidationRule();
+        ProductValidationRule productUniqueNameValidationRule = new ProductUniqueNameValidationRule(repository);
         Set<ProductValidationRule> rules = new HashSet<>();
         rules.add(productNameValidationRule);
         rules.add(productUniqueNameValidationRule);
 
         ProductValidationService validationService = new ProductValidationService(rules);
 
-        ProductService productService =new ProductService(repository , validationService);
+        ProductService productService = new ProductService(repository, validationService);
 
         ConsoleUI consoleUI = new ConsoleUI(productService);
         consoleUI.execute();

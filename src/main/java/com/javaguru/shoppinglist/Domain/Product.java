@@ -13,8 +13,8 @@ public class Product {
     private String category;
     private String description;
 
-    private double discount;
 
+    private double discount;
 
 
     public double getDiscount() {
@@ -53,7 +53,7 @@ public class Product {
         return name;
     }
 
-    public void setName(String name)  {
+    public void setName(String name) {
 
         this.name = name;
     }
@@ -62,7 +62,7 @@ public class Product {
         return price;
     }
 
-    public void setPrice(BigDecimal price)  {
+    public void setPrice(BigDecimal price) {
 
         this.price = price;
     }

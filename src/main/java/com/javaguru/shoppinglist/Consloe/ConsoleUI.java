@@ -9,13 +9,15 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.util.Optional;
 import java.util.Scanner;
+
 @Component
 public class ConsoleUI {
-   private ProductService productService;
+    private ProductService productService;
 
-   public ConsoleUI(ProductService productService){
-       this.productService = productService;
-   }
+    public ConsoleUI(ProductService productService) {
+        this.productService = productService;
+    }
+
     @Autowired
     public void execute() {
         while (true) {
@@ -60,14 +62,16 @@ public class ConsoleUI {
 
         Product product = new Product();
 
-        
+
         product.setName(name);
+        Long id = productService.createProduct(product);
+        product.setId(id);
+
         product.setPrice(price);
         product.setCategory(category);
         product.setDescription(description);
         product.setDiscount(discount);
-        Long id = productService.createProduct(product);
-        product.setId(id);
+
 
         System.out.println("Result: " + product.getId());
     }

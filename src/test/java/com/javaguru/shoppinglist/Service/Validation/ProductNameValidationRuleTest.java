@@ -21,13 +21,13 @@ public class ProductNameValidationRuleTest {
     @Test
     public void shouldThrowProductValidationException() {
         input = product(null);
-        assertThatThrownBy(()->victim.validate(input))
+        assertThatThrownBy(() -> victim.validate(input))
                 .isInstanceOf(ProductValidationException.class)
                 .hasMessage("Product name must be not null. ");
         verify(victim).checkNotNull(input);
     }
 
-    private Product product (String name){
+    private Product product(String name) {
         Product product = new Product();
         product.setName(name);
         return product;

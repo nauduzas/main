@@ -51,16 +51,16 @@ public class ProductInMemoryRepositoryTest {
         assertThat(result).isTrue();
     }
 
-    private Product expectedProduct(){
-        Product product= new Product();
+    private Product expectedProduct() {
+        Product product = new Product();
         product.setName(PRODUCT_NAME);
         product.setDescription(PRODUCT_DESCRIPTION);
         product.setId(PRODUCT_ID);
         return product;
     }
 
-    private Product product(){
-        Product product=new Product();
+    private Product product() {
+        Product product = new Product();
         product.setName(PRODUCT_NAME);
         product.setDescription(PRODUCT_DESCRIPTION);
         return product;

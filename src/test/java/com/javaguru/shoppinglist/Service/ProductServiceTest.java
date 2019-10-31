@@ -40,8 +40,8 @@ public class ProductServiceTest {
     private ProductService victim;
 
     @Before
-    public  void  setUp(){
-        victim = new ProductService(repository,validationService);
+    public void setUp() {
+        victim = new ProductService(repository, validationService);
     }
 
 
@@ -70,17 +70,17 @@ public class ProductServiceTest {
     }
 
     @Test
-    public void shouldThrowExceptionProductNotFound(){
+    public void shouldThrowExceptionProductNotFound() {
         when(repository.findProductById(any())).thenReturn(Optional.empty());
 
-       assertThatThrownBy(()->victim.findProductById(1001L))
-               .isInstanceOf(NoSuchElementException.class)
-               .hasMessage("Product not found. id 1001 ");
+        assertThatThrownBy(() -> victim.findProductById(1001L))
+                .isInstanceOf(NoSuchElementException.class)
+                .hasMessage("Product not found. id 1001 ");
 
 
     }
 
-    private  Product product(){
+    private Product product() {
         Product product = new Product();
         product.setName("TEST_NAME");
         product.setDescription("TEST_DESCRIPTION");
